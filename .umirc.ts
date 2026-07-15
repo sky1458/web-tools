@@ -1,8 +1,12 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
+  base: '/web-tools/',
+  publicPath: '/web-tools/',
+  history: { type: 'hash' },
   routes: [
-    { path: '/', component: 'index' },
+    { path: '/', component: 'qrcode' },
+    { path: '/lottery', component: 'lottery' },
     { path: '/docs', component: 'docs' },
   ],
   npmClient: 'yarn',

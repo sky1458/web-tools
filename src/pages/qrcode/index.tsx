@@ -39,9 +39,12 @@ export default function WechatCardPage() {
     return THEMES[themeSource];
   }, [themeSource, customColor]);
 
-  const handleFieldChange = useCallback((field: keyof CardData, value: string) => {
-    setCardData((prev) => ({ ...prev, [field]: value }));
-  }, []);
+  const handleFieldChange = useCallback(
+    (field: keyof CardData, value: string) => {
+      setCardData((prev) => ({ ...prev, [field]: value }));
+    },
+    [],
+  );
 
   const handleDownload = useCallback(async () => {
     if (downloading || !cardRef.current) return;
@@ -49,7 +52,9 @@ export default function WechatCardPage() {
     setCapturing(true);
 
     try {
-      await new Promise((r) => requestAnimationFrame(r));
+      await new Promise((r) => {
+        requestAnimationFrame(r);
+      });
       const rawCanvas = await html2canvas(cardRef.current, {
         backgroundColor: '#000000',
         scale: 2,
@@ -69,7 +74,13 @@ export default function WechatCardPage() {
       ctx.lineTo(canvas.width - radius, 0);
       ctx.arcTo(canvas.width, 0, canvas.width, radius, radius);
       ctx.lineTo(canvas.width, canvas.height - radius);
-      ctx.arcTo(canvas.width, canvas.height, canvas.width - radius, canvas.height, radius);
+      ctx.arcTo(
+        canvas.width,
+        canvas.height,
+        canvas.width - radius,
+        canvas.height,
+        radius,
+      );
       ctx.lineTo(radius, canvas.height);
       ctx.arcTo(0, canvas.height, 0, canvas.height - radius, radius);
       ctx.lineTo(0, radius);

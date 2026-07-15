@@ -18,7 +18,14 @@ interface ControlPanelProps {
 const PRESET_KEYS = Object.keys(THEMES) as ThemePreset[];
 
 const DownloadSvg = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
     <polyline points="7 10 12 15 17 10" />
     <line x1="12" y1="15" x2="12" y2="3" />
@@ -26,7 +33,15 @@ const DownloadSvg = () => (
 );
 
 const UploadSvg = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+  >
     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
     <polyline points="17 8 12 3 7 8" />
     <line x1="12" y1="3" x2="12" y2="15" />
@@ -34,7 +49,15 @@ const UploadSvg = () => (
 );
 
 const ColorWheelSvg = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+  >
     <circle cx="12" cy="12" r="10" />
     <circle cx="12" cy="12" r="3" />
   </svg>
@@ -64,11 +87,12 @@ export default function ControlPanel({
     reader.readAsDataURL(file);
   };
 
-  const fields: { key: keyof CardData; label: string; placeholder: string }[] = [
-    { key: 'name', label: '名字', placeholder: '扫一扫<br>添加好友' },
-    { key: 'role', label: '角色', placeholder: 'WeChat Contact' },
-    { key: 'org', label: '组织', placeholder: '微信用户' },
-  ];
+  const fields: { key: keyof CardData; label: string; placeholder: string }[] =
+    [
+      { key: 'name', label: '名字', placeholder: '扫一扫<br>添加好友' },
+      { key: 'role', label: '角色', placeholder: 'WeChat Contact' },
+      { key: 'org', label: '组织', placeholder: '微信用户' },
+    ];
 
   return (
     <div className={styles.panel}>
@@ -83,7 +107,9 @@ export default function ControlPanel({
               <div
                 key={key}
                 className={`${styles.themeSwatch}${isActive ? ` ${styles.themeSwatchActive}` : ''}`}
-                style={{ background: `linear-gradient(135deg, ${t.primary}, ${t.gold})` }}
+                style={{
+                  background: `linear-gradient(135deg, ${t.primary}, ${t.gold})`,
+                }}
                 title={key}
                 onClick={() => onThemeChange(key)}
               />
@@ -138,7 +164,11 @@ export default function ControlPanel({
           style={{ display: 'none' }}
           onChange={handleFileChange}
         />
-        <button className={styles.uploadBtn} onClick={() => fileInputRef.current?.click()}>
+        <button
+          type="button"
+          className={styles.uploadBtn}
+          onClick={() => fileInputRef.current?.click()}
+        >
           <UploadSvg />
           选择图片
         </button>
@@ -150,6 +180,7 @@ export default function ControlPanel({
         className={styles.downloadBtn}
         onClick={onDownload}
         disabled={downloading}
+        type="button"
       >
         {downloading ? (
           '生成中...'
