@@ -28,8 +28,8 @@ export default function Root() {
           <Menu.Item key="qrcode">
             <Link to="/">微信二维码生成</Link>
           </Menu.Item>
-          <Menu.Item key="docs">
-            <Link to="/docs">文档</Link>
+          <Menu.Item key="lottery">
+            <Link to="/lottery">彩票</Link>
           </Menu.Item>
         </Menu>
       </Header>
