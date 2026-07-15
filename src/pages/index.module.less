@@ -1,0 +1,29 @@
+/* index.module.less — page layout */
+
+.page {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: "Noto Sans SC", sans-serif;
+}
+
+.layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+}
+
+.cardArea {
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column;
+    align-items: center;
+  }
+}

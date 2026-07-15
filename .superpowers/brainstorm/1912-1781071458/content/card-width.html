@@ -1,0 +1,44 @@
+<h2>卡片宽度 — 多宽合适？</h2>
+<p class="subtitle">工牌通常比横式名片窄。当前是 max 480px 宽。</p>
+
+<div class="options">
+  <div class="option" data-choice="narrow" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>窄版 320px</h3>
+      <p>经典工牌比例，细长竖条。适合胸前悬挂，手机上看也很清晰。</p>
+      <div style="background:#111;border-radius:18px;padding:28px 18px;max-width:200px;margin:12px auto 0;display:flex;flex-direction:column;align-items:center;gap:10px">
+        <div style="background:#fff;width:80px;height:80px;border-radius:10px"></div>
+        <div style="font-size:16px;font-weight:700;color:#f0efe9">张小明</div>
+        <div style="font-size:11px;color:#d4a853">产品经理</div>
+        <div style="font-size:10px;color:#989890">腾讯科技</div>
+      </div>
+    </div>
+  </div>
+  <div class="option" data-choice="medium" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>中等 380px</h3>
+      <p>略宽，QR 码和信息更舒展。兼顾工牌感和可读性。</p>
+      <div style="background:#111;border-radius:18px;padding:28px 22px;max-width:230px;margin:12px auto 0;display:flex;flex-direction:column;align-items:center;gap:10px">
+        <div style="background:#fff;width:90px;height:90px;border-radius:10px"></div>
+        <div style="font-size:17px;font-weight:700;color:#f0efe9">张小明</div>
+        <div style="font-size:11px;color:#d4a853">产品经理</div>
+        <div style="font-size:10px;color:#989890">腾讯科技</div>
+      </div>
+    </div>
+  </div>
+  <div class="option" data-choice="keep" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>保持 480px</h3>
+      <p>维持现有宽度，内部改为竖式排列。适合需要大 QR 码的场景。</p>
+      <div style="background:#111;border-radius:18px;padding:28px 26px;max-width:260px;margin:12px auto 0;display:flex;flex-direction:column;align-items:center;gap:10px">
+        <div style="background:#fff;width:100px;height:100px;border-radius:10px"></div>
+        <div style="font-size:18px;font-weight:700;color:#f0efe9">张小明</div>
+        <div style="font-size:12px;color:#d4a853">产品经理</div>
+        <div style="font-size:10px;color:#989890">腾讯科技</div>
+      </div>
+    </div>
+  </div>
+</div>

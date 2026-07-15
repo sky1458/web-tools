@@ -1,0 +1,60 @@
+<h2>竖式工牌风格 — 哪种布局更好？</h2>
+<p class="subtitle">全部竖式，但信息层级不同。选你觉得最对味的。</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>经典工牌</h3>
+      <p>QR 码居顶、名字大字居中、角色/组织在下方，底部扫描提示。工牌感最强，像挂在胸前的 badge。</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-body" style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:32px 24px;background:#111;border-radius:20px;max-width:260px;margin:0 auto">
+          <div style="background:#fff;width:100px;height:100px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#999">QR</div>
+          <div style="background:rgba(7,193,96,0.1);border:1px solid rgba(7,193,96,0.2);border-radius:100px;padding:3px 12px;font-size:10px;color:#07c160">微信扫码添加</div>
+          <div style="font-size:22px;font-weight:700;color:#f0efe9">张小明</div>
+          <div style="font-size:13px;color:#d4a853">产品经理</div>
+          <div style="font-size:12px;color:#989890">腾讯科技有限公司</div>
+          <div style="height:1px;width:60%;background:rgba(255,255,255,0.08)"></div>
+          <div style="font-size:11px;color:#666;display:flex;gap:6px;align-items:center">🔍 打开微信扫一扫</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>简约名片</h3>
+      <p>WeChat 徽章在顶、名字+角色紧随其后、QR 码放在中下方作为视觉重心、底部极简提示。信息密度低，留白多。</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-body" style="display:flex;flex-direction:column;align-items:center;gap:12px;padding:32px 24px;background:#111;border-radius:20px;max-width:260px;margin:0 auto">
+          <div style="background:rgba(7,193,96,0.1);border:1px solid rgba(7,193,96,0.2);border-radius:100px;padding:3px 12px;font-size:10px;color:#07c160;display:flex;align-items:center;gap:4px">💬 微信名片</div>
+          <div style="font-size:22px;font-weight:700;color:#f0efe9">张小明</div>
+          <div style="font-size:13px;color:#d4a853">产品经理</div>
+          <div style="background:#fff;width:120px;height:120px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#999;margin:8px 0">QR</div>
+          <div style="font-size:12px;color:#989890">腾讯科技有限公司</div>
+          <div style="font-size:10px;color:#666">微信扫一扫识别二维码</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>卡片式</h3>
+      <p>头像区（QR）置顶突出、名字/角色/组织紧凑居中、底部带圆角扫描操作区。类似现代会员卡，QR 是主视觉。</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-body" style="display:flex;flex-direction:column;align-items:center;padding:0;background:#111;border-radius:20px;max-width:260px;margin:0 auto;overflow:hidden">
+          <div style="background:#fff;width:100%;height:140px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#999">QR Code</div>
+          <div style="padding:20px;display:flex;flex-direction:column;align-items:center;gap:6px">
+            <div style="font-size:20px;font-weight:700;color:#f0efe9">张小明</div>
+            <div style="font-size:12px;color:#d4a853">产品经理</div>
+            <div style="font-size:11px;color:#989890">腾讯科技有限公司</div>
+          </div>
+          <div style="width:100%;padding:10px;text-align:center;background:rgba(7,193,96,0.08);font-size:10px;color:#07c160">📷 打开微信 · 扫一扫 · 添加好友</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

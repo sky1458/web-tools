@@ -1,0 +1,67 @@
+<h2>字体配色方案 — 搭配 oklch(0.6059 0.1135 236.12) 背景</h2>
+<p class="subtitle">中浅蓝背景需要深色文字。两种配色方向：</p>
+
+<div class="split">
+  <div class="mockup">
+    <div class="mockup-header">方案 A — 深蓝文字系</div>
+    <div class="mockup-body" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:32px 20px;background:oklch(0.6059 0.1135 236.12);border-radius:16px;max-width:220px;margin:0 auto">
+      <div style="background:#fff;width:70px;height:70px;border-radius:8px"></div>
+      <div style="background:rgba(30,50,80,0.08);border:1px solid rgba(30,50,80,0.15);border-radius:100px;padding:3px 10px;font-size:9px;color:oklch(0.3 0.05 240)">微信扫码添加</div>
+      <div style="font-size:16px;font-weight:700;color:oklch(0.15 0.03 250)">张小明</div>
+      <div style="font-size:11px;color:oklch(0.45 0.1 80)">产品经理</div>
+      <div style="font-size:10px;color:oklch(0.35 0.02 245)">腾讯科技有限公司</div>
+      <div style="height:1px;width:70%;background:rgba(0,0,0,0.08);margin:6px 0"></div>
+      <div style="font-size:9px;color:oklch(0.4 0.02 245)">打开微信 · 扫一扫 · 识别二维码</div>
+    </div>
+    <p style="text-align:center;margin-top:8px;font-size:11px;color:#666">
+      <b>优雅克制</b> · 蓝金配 · 名字深黑蓝 · 辅色蓝灰 · 角色暖金
+    </p>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">方案 B — 暖色点缀系</div>
+    <div class="mockup-body" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:32px 20px;background:oklch(0.6059 0.1135 236.12);border-radius:16px;max-width:220px;margin:0 auto">
+      <div style="background:#fff;width:70px;height:70px;border-radius:8px"></div>
+      <div style="background:rgba(200,100,50,0.1);border:1px solid rgba(200,100,50,0.2);border-radius:100px;padding:3px 10px;font-size:9px;color:oklch(0.5 0.12 45)">微信扫码添加</div>
+      <div style="font-size:16px;font-weight:700;color:oklch(0.18 0.03 260)">张小明</div>
+      <div style="font-size:11px;color:oklch(0.5 0.15 50)">产品经理</div>
+      <div style="font-size:10px;color:oklch(0.35 0.02 250)">腾讯科技有限公司</div>
+      <div style="height:1px;width:70%;background:rgba(0,0,0,0.08);margin:6px 0"></div>
+      <div style="font-size:9px;color:oklch(0.4 0.02 250)">打开微信 · 扫一扫 · 识别二维码</div>
+    </div>
+    <p style="text-align:center;margin-top:8px;font-size:11px;color:#666">
+      <b>温暖活力</b> · 蓝橙配 · 名字深蓝 · 徽章/角色暖珊瑚橙 · 对比更强
+    </p>
+  </div>
+</div>
+
+<h3 style="margin-top:20px">改用 oklch 统一管理</h3>
+<p class="subtitle">把硬编码的 hex 色值全部换成 oklch，从背景推导出所有文字颜色。</p>
+
+<div class="pros-cons">
+  <div class="pros">
+    <h4>需要改的颜色</h4>
+    <ul>
+      <li><code>.card color</code> 默认文字：<code>#f0efe9</code> → 深色</li>
+      <li><code>.name</code> 名字：<code>#f0efe9</code> → 最深色</li>
+      <li><code>.label</code> 标签：<code>#989890</code> → 深灰蓝</li>
+      <li><code>.role</code> 角色：<code>var(--gold)</code> → 暖色，对蓝底有对比</li>
+      <li><code>.orgText</code> 组织：<code>#989890</code> → 深灰蓝</li>
+      <li><code>.contactItem</code>：<code>#989890</code> → 深灰蓝</li>
+      <li><code>.scanHint</code>：<code>#989890</code> → 深灰蓝</li>
+      <li><code>.divider</code>：rgba(255,...) → rgba(0,...)</li>
+      <li><code>.badge</code> bg/border/color：全调</li>
+      <li><code>.qrGlow</code>：调整光晕色</li>
+      <li>闪光边框渐变：适配蓝底</li>
+    </ul>
+  </div>
+  <div class="cons">
+    <h4>保持不变</h4>
+    <ul>
+      <li>卡片背景（用户已设）</li>
+      <li>QR 码白色底框</li>
+      <li>布局、间距、动画</li>
+      <li>装饰点跟随主题色</li>
+    </ul>
+  </div>
+</div>

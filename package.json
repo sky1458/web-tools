@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "author": "何志 <sky1458@qq.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.3.0",
+    "@fortawesome/free-brands-svg-icons": "^7.3.0",
+    "@fortawesome/free-regular-svg-icons": "^7.3.0",
+    "@fortawesome/free-solid-svg-icons": "^7.3.0",
+    "@fortawesome/react-fontawesome": "^3.4.0",
+    "antd": "^6.5.1",
+    "eslint": "^8.57.0",
+    "html2canvas": "^1.4.1",
+    "stylelint": "^14",
+    "umi": "^4.6.75"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "@umijs/lint": "^4.6.75",
+    "prettier": "^3.9.5",
+    "typescript": "^5.0.3"
+  }
+}

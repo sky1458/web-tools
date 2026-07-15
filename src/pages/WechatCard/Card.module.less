@@ -1,0 +1,268 @@
+/* Card.module.less — WeChat QR business card, vertical badge layout */
+
+/* ── Card ── */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card-bg);
+  border-radius: 28px;
+  padding: 72px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.05) inset,
+    0 4px 60px rgba(0, 0, 0, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  // width: min(90vw, 320px);
+  color: var(--text-secondary);
+  font-family: 'Noto Sans SC', 'Space Grotesk', sans-serif;
+  user-select: none;
+}
+
+.card * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Shimmer border ::before ── */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 30px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    var(--p-30),
+    var(--g-20),
+    var(--p-10),
+    var(--g-30),
+    var(--p-30)
+  );
+  background-size: 400% 400%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: shimmerBorder 6s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.capturing::before {
+  display: none;
+}
+
+@keyframes shimmerBorder {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ── Decorative accents ── */
+.accent {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.accentTL {
+  top: 16px;
+  left: 20px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.5;
+  box-shadow: 0 0 12px var(--p-40);
+}
+.accentBR {
+  bottom: 20px;
+  right: 24px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.5;
+  box-shadow: 0 0 10px var(--g-30);
+}
+
+/* ── QR frame ── */
+.qrFrame {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  padding: 12px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 4px 24px rgba(0, 0, 0, 0.15);
+  margin-bottom: 16px;
+}
+.qrFrame::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 22px;
+  border: 1.5px solid var(--g-35);
+  pointer-events: none;
+}
+.qrFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+
+/* QR glow pulse */
+.qrGlow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 30px;
+  background: radial-gradient(circle, var(--qr-glow-color) 0%, transparent 70%);
+  animation: qrGlow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes qrGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.04); }
+}
+
+/* ── WeChat badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  border-radius: 100px;
+  padding: 6px 16px;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+.badge svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Info section ── */
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.name {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.role {
+  font-size: 0.85rem;
+  color: var(--gold);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+.orgText {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* ── Contact row ── */
+.contactRow {
+  display: flex;
+  gap: 24px;
+  margin-top: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.contactItem svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* ── Divider ── */
+.divider {
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--divider-alpha) 20%,
+    var(--divider-alpha) 80%,
+    transparent
+  );
+  margin-bottom: 20px;
+}
+
+/* ── Scan hint ── */
+.scanHint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+.scanIcon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--scan-accent);
+  font-weight: 500;
+  animation: scanPulse 2s ease-in-out infinite;
+}
+@keyframes scanPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .card {
+    border-radius: 22px;
+    padding: 24px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card *,
+  .card *::before,
+  .card *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.2s !important;
+  }
+}

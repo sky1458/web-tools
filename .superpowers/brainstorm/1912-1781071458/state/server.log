@@ -1,0 +1,7 @@
+{"type":"server-started","port":56710,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:56710","screen_dir":"/Users/panda/Desktop/workspace/wechat-qrcode/.superpowers/brainstorm/1912-1781071458/content","state_dir":"/Users/panda/Desktop/workspace/wechat-qrcode/.superpowers/brainstorm/1912-1781071458/state"}
+{"type":"screen-added","file":"/Users/panda/Desktop/workspace/wechat-qrcode/.superpowers/brainstorm/1912-1781071458/content/layout-options.html"}
+{"type":"screen-added","file":"/Users/panda/Desktop/workspace/wechat-qrcode/.superpowers/brainstorm/1912-1781071458/content/card-width.html"}
+{"type":"screen-added","file":"/Users/panda/Desktop/workspace/wechat-qrcode/.superpowers/brainstorm/1912-1781071458/content/qr-size.html"}
+{"type":"screen-added","file":"/Users/panda/Desktop/workspace/wechat-qrcode/.superpowers/brainstorm/1912-1781071458/content/final-design.html"}
+{"type":"screen-added","file":"/Users/panda/Desktop/workspace/wechat-qrcode/.superpowers/brainstorm/1912-1781071458/content/color-palette.html"}
+{"type":"server-stopped","reason":"idle timeout"}
