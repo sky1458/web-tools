@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'umi';
-import { Layout, Menu, theme } from 'antd';
+import { Layout, Menu, theme, Affix } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import styles from './index.less';
@@ -12,27 +12,29 @@ export default function Root() {
   } = theme.useToken();
   return (
     <Layout>
-      <Header className={styles.header}>
-        <div className={styles.icon}>
-          <FontAwesomeIcon
-            icon={faHouse}
-            style={{ color: 'white', fontSize: 24 }}
-          />
-        </div>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['qrcode']}
-          style={{ flex: 1, minWidth: 0 }}
-        >
-          <Menu.Item key="qrcode">
-            <Link to="/">微信二维码生成</Link>
-          </Menu.Item>
-          <Menu.Item key="lottery">
-            <Link to="/lottery">彩票</Link>
-          </Menu.Item>
-        </Menu>
-      </Header>
+      <Affix>
+        <Header className={styles.header}>
+          <div className={styles.icon}>
+            <FontAwesomeIcon
+              icon={faHouse}
+              style={{ color: 'white', fontSize: 24 }}
+            />
+          </div>
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            defaultSelectedKeys={['qrcode']}
+            style={{ flex: 1, minWidth: 0 }}
+          >
+            <Menu.Item key="qrcode">
+              <Link to="/">微信二维码生成</Link>
+            </Menu.Item>
+            <Menu.Item key="lottery">
+              <Link to="/lottery">彩票</Link>
+            </Menu.Item>
+          </Menu>
+        </Header>
+      </Affix>
       <Content>
         <div style={{ background: colorBgContainer }}>
           <Outlet />
