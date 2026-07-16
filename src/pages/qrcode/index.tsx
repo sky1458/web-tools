@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useMemo } from 'react';
 import html2canvas from 'html2canvas';
-import qrDefault from '@/assets/qrcode_wechat.png';
+import qrDefault from '@/assets/qrcode_wechat.jpg';
 
 import Card, { generateCustomTheme } from './WechatCard/Card';
 import ControlPanel from './WechatCard/ControlPanel';
