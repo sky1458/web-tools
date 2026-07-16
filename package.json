@@ -7,7 +7,7 @@
     "postinstall": "umi setup",
     "setup": "umi setup",
     "start": "npm run dev",
-    "deploy": "umi build && gh-pages -d dist"
+    "deploy": "umi build && gh-pages -d dist -f"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.3.0",
@@ -25,6 +25,7 @@
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
     "@umijs/lint": "^4.6.75",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.9.5",
     "typescript": "^5.0.3"
   }

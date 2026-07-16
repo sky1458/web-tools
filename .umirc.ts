@@ -1,7 +1,7 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  base: '/web-tools/',
+  base: '/',
   publicPath: '/web-tools/',
   history: { type: 'hash' },
   routes: [

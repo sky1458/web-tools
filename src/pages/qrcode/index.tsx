@@ -9,6 +9,7 @@ import type { CardData, ThemeSource } from './WechatCard/types';
 import styles from './index.module.less';
 
 const DEFAULT_PARTICLES = 30;
+const SCALE = 8;
 
 function makeParticles(n: number) {
   return Array.from({ length: n }, (_, i) => ({
@@ -57,7 +58,7 @@ export default function WechatCardPage() {
       });
       const rawCanvas = await html2canvas(cardRef.current, {
         backgroundColor: '#000000',
-        scale: 2,
+        scale: SCALE,
         useCORS: true,
         allowTaint: true,
       });
@@ -67,7 +68,7 @@ export default function WechatCardPage() {
       canvas.width = rawCanvas.width;
       canvas.height = rawCanvas.height;
       const ctx = canvas.getContext('2d')!;
-      const scale = 2; // must match html2canvas scale
+      const scale = SCALE;
       const radius = 28 * scale;
       ctx.beginPath();
       ctx.moveTo(radius, 0);
