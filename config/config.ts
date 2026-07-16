@@ -1,14 +1,11 @@
 import { defineConfig } from 'umi';
+import routes from './routes';
 
 export default defineConfig({
   base: '/',
   publicPath: '/web-tools/',
   history: { type: 'hash' },
-  routes: [
-    { path: '/', component: 'qrcode' },
-    { path: '/lottery', component: 'lottery' },
-    { path: '/docs', component: 'docs' },
-  ],
+  routes,
   npmClient: 'yarn',
   utoopack: {},
 });
